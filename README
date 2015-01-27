@@ -1,7 +1,38 @@
+OVERVIEW
+--------
+
 Team communication will occur in the CS Forums thread:
 
 https://forums.cs.uidaho.edu/viewtopic.php?f=32&t=930&p=2121
 
 
-Check the main LaTeX document for individual tasks, which will be placed in TODO
-comments. Ctrl-F is your friend in ensuring you've seen all your tasks.
+TODO ITEMS
+----------
+
+Add your names to the authors list.
+
+Create and fill in a section in the document. Examples are provided.
+
+Change the SUBSECTION titles from a generic "Use Case N" to something
+desciptive.
+
+Create a use case diagram in PlantUML for each use case.
+
+Add the PlantUML file to the project repository.
+
+Embed the diagram as a PNG image into the LaTeX document.
+
+
+NOTES
+-----
+
+LaTeX has a subsubsection, with is used as follows:
+
+\begin{subsubsection}{title}
+Text in the subsubsection.
+\end{subsubsection}
+
+Also, check the main LaTeX document for individual tasks, which will be placed
+in TODO comments. Ctrl-F is your friend in ensuring you've seen all your tasks.
+I am going to try and keep TODO items updated here as well, but I might lag
+behind a little bit.
