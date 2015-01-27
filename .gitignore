@@ -1,0 +1,8 @@
+# Temp files
+*.swp
+
+# latex compiler files
+*.aux
+*.log
+*.pdf
+*.toc
