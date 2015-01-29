@@ -48,16 +48,76 @@ Words go here.
 Just make sure to leave a blank line between paragraphs.
 
 Also, hard wrap your lines to 80 characters.
-
-Embedding an image would be done like so:
-
-\includegraphics{foo.png}
-
-Where foo.png is in the same folder as the .tex file.
 \end{subsection}
 
 \begin{subsection}{Use Case 2}
 Another use case.
+\end{subsection}
+\end{section}
+
+\begin{section}{Anton Stalick}
+\begin{subsection}{World Entity Interaction}
+
+\textbf{Actors}:
+Player, Interactable Entity
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item Player is adjacent to the Interactable Entity.
+\item Player inputs the interact command, selecting the Interactable Entity.
+\end{enumerate}
+
+\textbf{Summary}:
+The Player interacts with the Entity occupying space in the World. The Entity 
+produces its interactive effect. 
+
+\textbf{Related Use Cases}
+All World Entity Interactions extend this use case. Examples would be 
+opening a door or operating a switch.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item Player moves adjacent to an Interactable Entity.
+\item System enables the input of the interact command.
+\item Player inputs the interact command.
+\item System evaluates the effect of the interact command on the
+Interactable Entity and updates the Entity's state accordingly.
+\item Player moves away from the Interactable Entity.
+\item System disables the input of the interact command.
+\end{enumerate}
+
+\end{subsection}
+
+\begin{subsection}{Inventory Item Use}
+
+\textbf{Actors}:
+Player, Inventory, Useable Item
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item Inventory belongs to Player.
+\item Item is in Inventory.
+\item Item is useable from the Inventory
+\item Player inputs the use command, selecting Item for use.
+\end{enumerate}
+
+\textbf{Summary}:
+The Player uses the Item in their Inventory. The Item produces its
+use effect.
+
+\textbf{Related Use Cases}
+All Useable Item Uses extend this use case. Examples would be quaffing
+a potion or reading a note.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item Player selects Item from Inventory.
+\item System enables the input of the use command.
+\item Player inputs the use command.
+\item System evaluates the effect of the use command on the
+Useable Item and updates the Item's state accordingly.
+\end{enumerate}
+
 \end{subsection}
 \end{section}
 
