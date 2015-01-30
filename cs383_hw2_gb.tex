@@ -134,18 +134,49 @@ The NPC notifies the Player of the conditions that remain unmet (see
 
 \begin{subsection}{Combat}
 \textbf{Actors}:
+Player(s), Enemy Entity(-ies)
 
 \textbf{Goal}:
+The Player seeks to overcome and defeat an opponent or challenge.
 
 \textbf{Preconditions}:
+\begin{enumerate}
+\item The Player is adjacent to the Enemy Entity.
+\item The Player has the Combat flag enabled.
+\item The Enemy Entity has the Combat flag enabled.
+\end{enumerate}
+
+% NOTE: Whoever does the Player Victory and Player Death use cases needs
+% to make sure the System enables the Combat flag on the Player.
 
 \textbf{Summary}:
+The Player engages in combat with an Enemy Entity occupying space in the
+World. Combat is carried out in Turns, with each combatant selecting a Move
+each Turn, which are then resolved in order from the entity with the
+highest Speed value to the entity with the lowest Speed value. When every
+member of one side has their Health reduced to 0, then the other side is
+victorious. If the Player(s) won, then go to use case \textit{Player
+Victory}. If the Player(s) lost, then go to use case \textit{Player Death}.
 
 \textbf{Related Use Cases}:
+This use case is a parent to \textit{Combat Turn}. The use cases
+\textit{Player Victory} or \textit{Player Death} immediately follow. This
+use case can be optionally extended to allow for alternate forms of combat.
 
 \textbf{Steps}:
-
-\textbf{Alternative}:
+\begin{enumerate}
+\item The Player inputs the Begin Combat command, \textit{or} the Enemy
+Entity begins combat with the Player.
+\item The System disables the Player's Combat flag.
+\item The System disables the Enemy Entity's Combat flag.
+\item \label{combat:turn} Perform use case \textit{Combat Turn}.
+\item If neither side has been reduced to 0 Health,
+	go to step \ref{combat:turn}.
+\item If the Enemy Entity has a Health of 0, go to use case \textit{Player
+	Victory}.
+\item If the Player has a Health of 0, go to use case \textit{Player
+	Death}.
+\end{enumerate}
 \end{subsection}
 \end{section}
 
