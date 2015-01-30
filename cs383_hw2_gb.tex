@@ -93,9 +93,59 @@ interaction (see \textit{Preconditions}).
 \end{subsection}
 
 \begin{subsection}{Get a Promotion}
+\textbf{Actors}:
+Player, NPC
+
+\textbf{Goal}:
+The Player seeks to advance to the next level of play.
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The Player is able to perform the use case \textit{Interact with a
+	Coworker}.
+\item The Player has recieved a Level Advancement Quest from the NPC.
+\item The Player has completed the Level Advancement Quest given by the
+	NPC.
+\end{enumerate}
+
+\textbf{Summary}:
+The Player interacts with an NPC occupying space in the World. If all of
+the \textit{Preconditions} are met then the Player is given access to the
+next level of play, and is given any corresponding benefits or items.
+
+\textbf{Related Use Cases}:
+This use case extends \textit{Interact with a Coworker}. This case may be
+optionally extended to allow for different player classes or alternate
+advancement requirements.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item The Player inputs the interact command, selecting the NPC.
+\item The System enables the next level of play.
+\item The System enacts any appropriate state changes upon the Player.
+\item The System enacts any appropriate state changes upon NPCs.
+\item The Player is notified of their advancement.
+\end{enumerate}
+
+\textbf{Alternative}:
+The NPC notifies the Player of the conditions that remain unmet (see
+\textit{Preconditions}).
 \end{subsection}
 
 \begin{subsection}{Combat}
+\textbf{Actors}:
+
+\textbf{Goal}:
+
+\textbf{Preconditions}:
+
+\textbf{Summary}:
+
+\textbf{Related Use Cases}:
+
+\textbf{Steps}:
+
+\textbf{Alternative}:
 \end{subsection}
 \end{section}
 
@@ -167,11 +217,35 @@ Useable Item and updates the Item's state accordingly.
 
 \begin{section}{Foo Bar}
 \begin{subsection}{Use Case 1}
-Another use case.
+\textbf{Actors}:
+
+\textbf{Goal}:
+
+\textbf{Preconditions}:
+
+\textbf{Summary}:
+
+\textbf{Related Use Cases}:
+
+\textbf{Steps}:
+
+\textbf{Alternative}:
 \end{subsection}
 
 \begin{subsection}{Use Case 2}
-Another use case.
+\textbf{Actors}:
+
+\textbf{Goal}:
+
+\textbf{Preconditions}:
+
+\textbf{Summary}:
+
+\textbf{Related Use Cases}:
+
+\textbf{Steps}:
+
+\textbf{Alternative}:
 \end{subsection}
 \end{section}
 
