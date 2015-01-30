@@ -8,7 +8,16 @@
 		\begin{center}\large#1\end{center}
 		\vskip0.5em}
 }
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\geometry{margin=1in}
+
 \setcounter{tocdepth}{2}
+
 \title{Homework 1}
 \subtitle{CS 383 - Group 3}
 \author{
@@ -17,7 +26,7 @@ Mason Fabel \\
 % TODO: Add your names here.
 }
 \date{\today}
-\geometry{margin=1in}
+
 
 \begin{document}
 
@@ -42,6 +51,10 @@ Document Typsetting and Editing: \textbf{Mason Fabel}
 
 % NOTE: LaTeX has a `\begin{subsubsection}{title}` if you desire more
 % granular sectioning.
+
+% NOTE: I disabled the automatic indentation of new paragraphs, as it was
+% causing some strange document layouts. If you want something indented,
+% then just use the \indent command. --Mason
 
 \begin{section}{Mason Fabel}
 \begin{subsection}{Interact with a Coworker}
