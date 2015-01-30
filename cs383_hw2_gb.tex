@@ -44,16 +44,45 @@ Document Typsetting and Editing: \textbf{Mason Fabel}
 % granular sectioning.
 
 \begin{section}{Mason Fabel}
-\begin{subsection}{Use Case 1}
-Words go here.
+\begin{subsection}{Interact with a Coworker}
+\textbf{Actors}:
+Player, NPC
 
-Just make sure to leave a blank line between paragraphs.
+\textbf{Goal}:
+The Player wishes to perform an interaction with an NPC.
 
-Also, hard wrap your lines to 80 characters.
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The Player is adjacent to the NPC.
+\item The Player has a relationship value with the NPC equal to or greater
+	than the NPC's relationship threshold.
+\end{enumerate}
+
+\textbf{Summary}:
+The Player interacts with an NPC occupying space in the World. The
+interaction may or may not cause a state change for either the Player or
+the NPC Social Network.
+
+\textbf{Related Use Cases}:
+All specific NPC interactions extend this use case. Examples include
+modifying a relationship, gaining a promotion, or managing quests.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item The Player inputs the interact command, selecting the NPC.
+\item The System performs the interaction, gathing aditional input from the
+	Player as necessary.
+\end{enumerate}
+
+\textbf{Alternative}:
+The NPC informs the Player they lack the relationship to perform the
+interaction (see \textit{Preconditions}).
 \end{subsection}
 
-\begin{subsection}{Use Case 2}
-Another use case.
+\begin{subsection}{Get a Promotion}
+\end{subsection}
+
+\begin{subsection}{Combat}
 \end{subsection}
 \end{section}
 
