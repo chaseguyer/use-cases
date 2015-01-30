@@ -18,11 +18,12 @@
 
 \setcounter{tocdepth}{2}
 
-\title{Homework 1}
-\subtitle{CS 383 - Group 3}
+\title{Homework 2}
+\subtitle{CS 383 - Group B}
 \author{
 Mason Fabel \\
 \and Anton Stalick \\
+\and Madeleine Brennan \\
 % TODO: Add your names here.
 }
 \date{\today}
@@ -255,6 +256,82 @@ to distribute the Items gained.
 \item \label{player_victory:end} Go to use case \textit{Place Items in
 	Inventory}.
 \end{enumerate}
+\end{subsection}
+\end{section}
+
+\begin{section}{Madeleine Brennan}
+\begin{subsection}{Speak with NPC}
+\textbf{Actors}:
+Player, NPC
+
+\textbf{Goal}:
+Player wishes to speak with an NPC in order to gain information or recieve 
+a quest.
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The player is adjacent to an NPC.
+\item The NPC has an available speak interact command
+\end{enumerate}
+
+\textbf{summary}:
+The player communicates with an NPC that is occupying the nearby space 
+in the world. Communication will add new game information and/or start
+a new quest.
+
+\textbf{Related Use Cases}:
+This use case extends the Interact with Coworker use case, and will be 
+connected to use cases coorelating to interacting with NPCs through 
+dialog.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item Player selects NPC to interact with
+\item Player selects the speak function from the interact menu
+\item Information is spoken and written to the screen
+\item If necessary, input will be selected from options on the screen
+	to allow player to respond to NPC.
+\end{enumerate}
+
+\textbf{Alternative}:
+No speak function is available in NPC interaction box, no action is 
+taken (see \textit{Preconditions}).
+\end{subsection}
+
+\begin{subsection}{Picking Up/Placing Items in Inventory}
+\textbf{Actors}:
+Player, Object within world space
+
+\textbf{Goal}:
+Player wishes to move item from world space into their inventory.
+
+\textbf{Preconditions}
+\begin{enumerate}
+\item Player occupies space with object
+\item Player has an empty slot in their inventory
+\end{emumerate}
+
+\textbf{Summary}:
+The Player comes into contact with an object within the world 
+space, moves it from the world space to their inventory.
+
+\textbf{Related Use Cases}:
+This use case extends the World Entity Interaction use case, and the
+use case upgrading items extends from it.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item Player moves to the same space as a visible object occupying world
+	space.
+\item Player selects the place object in inventory selection from 
+	interaction menu.
+\item Object appears in single slot of players inventory.
+\item Object is removed from the world space.
+\end{emumerate}
+
+\textbf{Alternatives}:
+Player does not have an empty slot in their inventory, no action is
+taken (see \textit{Preconditions}).
 \end{subsection}
 \end{section}
 
