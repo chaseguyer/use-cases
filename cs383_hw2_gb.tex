@@ -358,6 +358,69 @@ Useable Item and updates the Item's state accordingly.
 \end{subsection}
 \end{section}
 
+\begin{section}{Alexia Doramus}
+\begin{subsection}{Movement through Levels}
+\textbf{Actors}:
+Player
+
+\textbf{Goal}:
+To cross the current level and enter the next one.
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The tile the player is moving to must not have an obstacle. 
+\item If there is an item required to move on to the next level, the player must possess it.
+\end{enumerate}
+
+\textbf{Summary}:
+The player will traverse across the level to find the exit tile to the next one. If he/she encounters a wall or solid object, they player will not move in the direction of the obstacle. If the player succeeds in finding and moving onto the exit tile, they will be given a prompt that asks if they would like to move to the next area. If not, the player is pushed away from the tile so they can continue to explore the level they are on. If the player wishes to move forward, the next level will be generated and they will be moved to it.
+
+\textbf{Related Use Cases}:
+All overworld interactions are extended by this use case. Talking to npcs, combat, and picking up items are examples.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item The player chooses a direction designated by the movement keys.
+\item The system checks to see if the move is legal.
+\item The player continues to move until the exit tile is reached.
+\item The player moves onto the exit tile to take him/her to the next level.
+\item The player is given a prompt to see if they would like to continue. If no, the player is moved away from the tile.
+\item If the player chooses yes, the new level is constructed and they are placed within it.
+\end{enumerate}
+\end{subsection}
+
+\begin{subsection}{Upgrading Items}
+\textbf{Actors}:
+Player
+
+\textbf{Goal}:
+To create a stronger items that make fighting enemies easier.
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The player must not be engaged in battle.
+\item The player has to meet the requirements for the upgrade.
+\end{enumerate}
+
+\textbf{Summary}:
+Scattered across the level there will be upgrades to items already equipped. When the player picks it up, the upgrade will be added to the inventory. Upgrades may have different effects on the weapon. Some might make the weapon stronger, some might be faster, etc. The player then applies the upgrade to their weapon of choice.
+
+\textbf{Related Use Cases}:
+Picking up items and inventory management extend to this case. Weapon usage is extended by this case.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item The player picks up an upgrade.
+\item The player looks at the inventory to see the description of the upgrade.
+\item The uprade is applied to a weapon the player chooses.
+\item The weapon is now more powerful.
+\end{enumerate}
+
+\textbf{Alternative}:
+The player decides not to use the upgrade or saves it for later.
+\end{subsection}
+\end{section}
+
 \chapter{Team Use Cases}
 
 % TODO: Meet FRIDAY after class to select use cases for this section
