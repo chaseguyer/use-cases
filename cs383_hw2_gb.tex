@@ -178,6 +178,84 @@ Entity begins combat with the Player.
 	Death}.
 \end{enumerate}
 \end{subsection}
+
+\begin{subsection}{Combat Turn}
+\textbf{Actors}:
+Player(s), Enemy Entity(-ies)
+
+\textbf{Goal}:
+The Player seeks to reduce the Enemy Entity's Health to 0 and keep their
+own Health above 0.
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The Player is currently in the \textit{Combat} use case.
+\item The Enemy Entity is currently in the \textit{Combat} use case.
+\item The \textit{Combat} use case is requesting for the \textit{Combat
+	Turn} use case to be run.
+\end{enumerate}
+
+\textbf{Summary}:
+The Player and the Enemy Entity both select a Move. Moves are then
+sequentially executed, with the Move selected by the Entity with the
+largest Speed value being evaluated first, and the Move selected by the
+Entity with the smallest Speed value being evaluated last.
+
+\textbf{Related Use Cases}:
+This use case is a child of the \textit{Combat} use case, and can be
+optionally extended to provide alternative combat mechanics.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item The System prompts the Player with a list of legal Moves.
+\item The Player selects a Move.
+\item The Enemy entity selects a Move.
+\item The System evaluates all Moves, in order of Speed.
+\item The System updates the state of each Entity as appropriate.
+\end{enumerate}
+\end{subsection}
+
+\begin{subsection}{Player Victory}
+\textbf{Actors}:
+Player(s), Enemy Entity(-ies)
+
+\textbf{Goal}:
+The Player seeks to list and distribute the benefits of victory.
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The Player is currently in the \textit{Combat} use case.
+\item The Player has a Health which is greater than 0.
+\item The Enemy Entity is currently in the \textit{Combat} use case.
+\item The Enemy Entity has a Health of 0.
+\item The \textit{Combat} use case is requesting for the \textit{Player
+	Victory} use case to be run.
+\end{enumerate}
+
+\textbf{Summary}:
+The Player is informed of any Items or Reputation gained. If multiple
+Players are present, then they reach an agreement on how the Items are to
+be distributed.
+
+\textbf{Related Use Cases}:
+This use case can only be begun when transitioning from the \textit{Combat}
+use case.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item The System calculates the Items and/or Reputation gained by the
+	Player based upon the Enemy Entity.
+\item The System informs the Player of the Items and/or Reputation gained.
+\item If there is only one player, go to step \ref{player_victory:end}.
+\item \label{player_victory:distribute_items} The System allows the Players
+to distribute the Items gained.
+\item The Players either agree or do not agree to the distribution.
+\item If the Players do not agree,
+	go to step \ref{player_victory:distribute_items}
+\item \label{player_victory:end} Go to use case \textit{Place Items in
+	Inventory}.
+\end{enumerate}
+\end{subsection}
 \end{section}
 
 \begin{section}{Anton Stalick}
