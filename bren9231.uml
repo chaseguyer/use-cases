@@ -1,0 +1,79 @@
+@startuml
+
+actor :User:
+actor :Player:
+actor :NPC:
+actor :Enemy:
+
+:User: <|-- :Player:
+:Enemy: <|-- :NPC:
+
+usecase (Interact with a Coworker) as (1_1_1)
+usecase (Get a Promotion) as (1_1_2)
+usecase (Combat) as (1_1_3)
+usecase (Speak with NPC) as (1_1_4)
+usecase (Combat Turn) as (1_1_5)
+usecase (Player Victory) as (1_1_6)
+usecase (World Entity Interaction) as (1_2_1)
+usecase (Picking Up/Placing Item in Inventory) as (1_2_2)
+usecase (Buying Item) as (1_2_3)
+usecase (Selling Item) as (1_2_4)
+usecase (Equipping Item) as (1_2_5)
+usecase (Inventory Item Use) as (1_2_6)
+usecase (Movement through Levels) as (1_3_1)
+usecase (Upgrading Items) as (1_3_2)
+usecase (Player Death) as (1_3_3)
+usecase (Closing the Game) as (1_3_4)
+
+(1_1_1) <|-- (1_1_2)
+(1_1_1) <|-- (1_1_4)
+(1_1_3) <-- (1_1_5)
+(1_2_6) <-- (1_2_3)
+(1_2_6) <-- (1_2_4)
+(1_2_6) <-- (1_2_5)
+(1_1_3) <-- (1_1_5)
+(1_1_3) <-- (1_1_6)
+(1_2_2) <|-- (1_3_2)
+(1_2_1) <|-- (1_1_1)
+
+:Player: --> (1_1_1)
+:NPC: --> (1_1_1)
+
+:Player: --> (1_1_2)
+:NPC: --> (1_1_2)
+
+:Player: --> (1_1_3)
+:Enemy: --> (1_1_3)
+
+:Player: --> (1_1_4)
+:NPC: --> (1_1_4)
+
+:Player: --> (1_1_5)
+:Enemy: --> (1_1_5)
+
+:Player: --> (1_1_6)
+:Enemy: --> (1_1_6)
+
+:Player: --> (1_2_1)
+:NPC: --> (1_2_1)
+
+:Player: --> (1_2_2)
+
+:Player: --> (1_2_3)
+
+:Player: --> (1_2_4)
+
+:Player: --> (1_2_5)
+
+:Player: --> (1_2_6)
+
+:Player: --> (1_3_1)
+
+:Player: --> (1_3_2)
+
+:Player: --> (1_3_3)
+:User: --> (1_3_3)
+
+:User: --> (1_3_4)
+
+@enduml
