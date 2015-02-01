@@ -1,0 +1,70 @@
+@startuml
+
+actor :Entity:
+actor :Player:
+actor :NPC:
+actor :Inventory:
+actor :Enemy:
+actor :Interactable Entity:
+
+:Entity: <|-- :Player:
+:Entity: <|-- :NPC:
+:Entity: <|-- :Inventory:
+:Entity: <|-- :Enemy:
+:Entity: <|-- :Interactable Entity:
+:Entity: <|-- :Item:
+
+usecase (World Entity Interaction) as (a)
+usecase (Interact with Coworker) as (b)
+usecase (Get a Promotion) as (c)
+usecase (Combat) as (d)
+usecase (Combat Turn) as (e)
+usecase (Player Victory) as (f)
+usecase (Move Through Level) as (g)
+usecase (Speak with NPC) as (h)
+usecase (Pick Up Item) as (i)
+usecase (Inventory Item Use) as (j)
+usecase (Upgrade Item) as (k)
+usecase (Buy Item) as (l)
+usecase (Sell Item) as (m)
+usecase (Equip Item) as (n)
+
+(b) <|-- (c)
+(b) <|-- (h)
+(b) <|-- (l)
+(b) <|-- (m)
+
+(d) <|-- (e)
+
+:Player: --> (a)
+:Player: --> (b)
+:Player: --> (d)
+:Player: --> (f)
+:Player: --> (g)
+:Player: --> (i)
+:Player: --> (j)
+:Player: --> (k)
+:Player: --> (n)
+
+:NPC: --> (b)
+
+:Inventory: --> (i)
+:Inventory: --> (j)
+:Inventory: --> (k)
+:Inventory: --> (l)
+:Inventory: --> (m)
+:Inventory: --> (n)
+
+:Enemy: --> (d)
+:Enemy: --> (f)
+
+:Interactable Entity: --> (a)
+
+:Item: --> (i)
+:Item: --> (j)
+:Item: --> (k)
+:Item: --> (l)
+:Item: --> (m)
+:Item: --> (n)
+
+@enduml
