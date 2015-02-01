@@ -1,0 +1,93 @@
+skinparam packagestyle rect 
+
+left to right direction
+
+(World Entity) <|-- :Player: : extends
+:User: <|-- :Player: : extends
+(Interact Entity) <|-- :NPC: : extends
+:NPC: <|-- :Enemy: : extends 
+(Item) <|-- (Useable Item) : extends
+(World Entity) <|-- (Item) : extends
+(World Entity) <|-- (Interact Entity) : extends
+
+rectangle "Movement" as mov {
+    (Movement) <-- Player
+}
+
+rectangle "World Entity Interaction" as wei {
+    (Interaction) as weii
+    weii <-- Player
+    weii <-- (Interact Entity)
+}
+
+rectangle "Picking Up Item" as pui {
+    (Pick Up) <-- Player
+    (Pick Up) <-- Item
+}
+
+wei <|-- pui : extends
+
+rectangle "Inventory Item Use" as iiu {
+    (Use) <-- Player
+    (Use) <-- (Useable Item)
+}
+
+rectangle "Item Upgrade" as iup {
+    (Upgrade) <-- Player
+    (Upgrade) <-- Item
+}
+
+rectangle "Closing Game" as clg {
+    (Close Game) <-- User
+}
+
+rectangle "Speak with NPC" as npcs {
+    (Speak) <-- Player
+    (Speak) <-- NPC
+}
+
+rectangle "Buy/Sell Item" as npcb {
+    (Trade) <-- Player
+    (Trade) <-- NPC
+    (Trade) <-- Item
+}
+
+rectangle "Get Promotion" as npcp {
+    (Promotion) <-- Player
+    (Promotion) <-- NPC
+}
+
+rectangle "Combat" as npcc {
+    (Combat) <-- Player
+    (Combat) <-- Enemy
+}
+
+rectangle "Combat Turn" as npcct {
+    (Turn) <-- Player
+    (Turn) <-- Enemy
+}
+
+rectangle "Player Victory" as npccv {
+    (Victory) <-- Player
+    (Victory) <-- Enemy
+}
+
+rectangle "Player Death" as npccd {
+    (Death) <-- Player
+    (Death) <-- Enemy
+}
+
+npcc <|-- npcct : extends
+npcc <|-- npccv : extends
+npcc <|-- npccd : extends
+
+rectangle "Interact with NPC" as npci {
+    (Interaction) <-- Player
+    (Interaction) <-- NPC
+}
+
+npci <|-- npcs : extends
+npci <|-- npcb : extends
+npci <|-- npcp : extends
+npci <|-- npcc : extends
+wei <|-- npci : extends
