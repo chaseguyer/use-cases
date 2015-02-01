@@ -465,6 +465,84 @@ The player decides not to use the upgrade or saves it for later.
 \end{subsection}
 \end{section}
 
+\begin{section}{Chase Guyer}
+
+\begin{subsection}{Selling Items}
+\textbf{Actors}:
+Player, Shopkeeper
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The player has an item that the shopkeeper is willing to buy.
+\item The shopkeeper has sufficient currency for the transaction.
+\end{enumerate}
+
+\textbf{Summary}:
+Player exchanges an item for currency with a shopkeeper.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item Player approaches shopkeeper.
+\item Player engages shop.
+\item The item is given to the shopkeeper, currency is taken from the shopkeeper
+and given to the player.
+\end{enumerate}
+
+\end{subsection}
+
+\begin{subsection}{Buying Items}
+\textbf{Actors}:
+Player, Shopkeeper
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The shopkeeper has an item that the player is willing to buy
+\item The player has sufficient currency for the transaction.
+\end{enumerate}
+
+\textbf{Summary}:
+The player exchanges currency for an item with the shopkeeper.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item The player approaches the shopkeeper.
+\item Player engages shop.
+\item Player selects item from the shopkeeper's inventory to buy.
+\item System checks to make sure player has sufficient currency
+\item If so, the item is moved from shopkeeper's inventory and into the player's.
+\end{enumerate}
+
+\end{subsection}
+
+\begin{subsection}{Equip an Item}
+\textbf{Actors}:
+Player
+
+\textbf{Preconditions}:
+\begin{enumerate}
+\item The player has the stats to equip the item.
+\item The item is one that is equippable.
+\item The item is in the player's inventory.
+\end{enumerate}
+
+\textbf{Summary}:
+A player's action transfers an item from their inventory to their equipment.
+
+\textbf{Steps}:
+\begin{enumerate}
+\item The player has the item.
+\item The player selects an equip action.
+\item The item is removed from the player's inventory.
+\item The item is placed in the selected equipment slot.
+\item If there is an item already in the slot, the items are switched.
+\item If the item being swapped occupies more inventory space than is available,
+the action is denied.
+\end{enumerate}
+\end{subsection}
+
+\end{section}
+
+
 \chapter{Team Use Cases}
 
 % TODO: Meet FRIDAY after class to select use cases for this section
